@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+:root {
+    --color-primary: #002f5e;
+    --color-secondary: #314e75;
+    --color-accent: #7c9cd4;
+  }
+  
+.bg-primary { background-color: #002f5e; }
+.bg-secondary { background-color: #314e75; }
+.bg-accent { background-color: #7c9cd4; }
+
+.text-primary { color: #002f5e; }
+.text-secondary { color: #314e75; }
+.text-accent { color: #7c9cd4; }
