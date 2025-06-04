@@ -110,7 +110,7 @@ export default function Contact() {
 
                                 <div>
                                     <p className="text-[#002f5e] text-xl">ที่อยู่</p>
-                                    <p className="text-gray-600">123 ถนนสาทร กรุงเทพฯ 10120</p>
+                                    <p className="text-gray-600">โนนสูง, นครราชสีมา</p>
                                 </div>
                             </div>
                             <div className="">
