@@ -1,8 +1,12 @@
 "use client";
 
 import Image from 'next/image';
+import { useState } from 'react';
+import ImageShow from '../components/ImageShow';
 
 export default function Portfolio() {
+
+    const [selectedData, setSelectedData] = useState<string | null>(null);
 
     const portfolio = [{
         src : "https://scontent.fbkk12-6.fna.fbcdn.net/v/t39.30808-6/493672089_9997674136921408_2935433200254977566_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OV8OkfBsFBkQ7kNvwEpCPzt&_nc_oc=AdnNR8Em8XC7DyPhZ8X9km-cOei43b8XOftlnWhe-pFD1YkoLClG9PlwoCfuTrhr4h0gywLoa8BOknhYU7cy2g4L&_nc_zt=23&_nc_ht=scontent.fbkk12-6.fna&_nc_gid=UYiJwShBNka9ZaEn0NiLjg&oh=00_AfI8TCL3UtIe0CNfWMy9AxVQCnP72xglHcHFr_ZVTMIyog&oe=6845D6DC",
@@ -81,24 +85,29 @@ export default function Portfolio() {
         <>
             <section id="portfolio" className="py-16 px-6 bg-gray-100">
                 <div className="container mx-auto max-w-6xl">
-                    <h2 className="text-3xl font-bold text-center mb-7 text-[#002f5e]">ผลงานของเรา</h2>
+                    <h2 className="text-3xl font-bold text-center mb-7 text-[#002f5e]">ขอบคุณทุกท่านที่ไว้ใจทีมงานเอกรุ๊ป</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
                         {
+                            
                             portfolio.map((e) => 
-                                <Image
-                                    key={e.src}
-                                    src={e.src}
-                                    alt={e.alt}
-                                    width={300}
-                                    height={300}
-                                    className="rounded-lg object-cover w-full h-52  shadow-md hover:scale-105 transition transform border border-gray-300" 
-                                />
+                                <div key={e.src} onClick={() => setSelectedData(e.src)}>
+                                    <Image
+                                        src={e.src}
+                                        alt={e.alt}
+                                        width={300}
+                                        height={300}
+                                        className="rounded-lg object-cover w-full h-52  shadow-md hover:scale-105 transition transform border border-gray-300" 
+                                    />
+                                </div>
+                                
                             )
                         }
                     </div>
-                    <h2 className="text-md font-bold text-center mt-5 text-gray-600">ขอบคุณทุกท่านที่ไว้ใจทีมงานเอกรุ๊ป</h2>
                 </div>
             </section>
+            {selectedData && (
+                <ImageShow data={selectedData} onClose={() => { setSelectedData(null); }} />
+            )}
         </>
     );
 }

@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-white shadow-md sticky top-0 z-50">
+            <header className="bg-white shadow-md sticky top-0 z-40">
                 <div className="container mx-auto flex justify-between items-center py-3 px-6">
                     <div className='flex items-center gap-2'>
                         <Image 
