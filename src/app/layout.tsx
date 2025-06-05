@@ -10,7 +10,21 @@ const noto = Noto_Sans_Thai({
 export const metadata: Metadata = {
   title: "A.Group",
   description: "ติดตั้งแอร์ ล้างแอร์ เดินสายไฟ โดยทีมช่างมืออาชีพ",
+  openGraph: {
+    title: "A.Group",
+    description: "ติดตั้งแอร์ ล้างแอร์ เดินสายไฟ โดยทีมช่างมืออาชีพ",
+    url: "https://agroup-air.vercel.app",
+    images: [
+      {
+        url: "images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "A.Group Logo",
+      },
+    ],
+  },
 };
+
 
 export default function RootLayout({
   children,
