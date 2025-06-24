@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
       'scontent.fbkk13-3.fna.fbcdn.net',
       'scontent.fbkk9-2.fna.fbcdn.net',
       'upload.wikimedia.org',
-      'scontent.fbkk8-4.fna.fbcdn.net'
+      'scontent.fbkk8-4.fna.fbcdn.net',
+      'drive.google.com'
     ],
   },
 };
