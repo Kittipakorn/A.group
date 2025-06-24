@@ -8,6 +8,13 @@ type ImageFile = {
   alt: string;
 };
 
+interface GoogleDriveFile {
+    id: string;
+    name: string;
+    mimeType: string;
+}
+  
+
 export default function Portfolio() {
   const [selectedData, setSelectedData] = useState<string | null>(null);
   const [portfolio, setPortfolio] = useState<ImageFile[]>([]);
@@ -29,8 +36,8 @@ export default function Portfolio() {
           return;
         }
         const images = data.files
-          .filter((file: any) => file.mimeType.startsWith('image/'))
-          .map((file: any) => ({
+          .filter((file: GoogleDriveFile) => file.mimeType.startsWith('image/'))
+          .map((file: GoogleDriveFile) => ({
             src: `https://drive.google.com/uc?export=view&id=${file.id}`,
             alt: file.name,
           }));
